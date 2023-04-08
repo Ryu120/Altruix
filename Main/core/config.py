@@ -74,7 +74,7 @@ class BaseConfig(object):
     DEBUG = True if getenv("DEBUG", "false").lower() == "true" else False
     LOG_CHAT_ID = digit_wrap(getenv("LOG_CHAT_ID", None))
     UB_LANG = getenv("UB_LANG")
-    SUDO_CMD_HANDLER = getenv("SUDO_CMD_HANDLER") or "!"
+    SUDO_CMD_HANDLER = "?" or "!"
     CMD_HANDLER = "+" or "."
     try:
         SUDO_USERS = [
