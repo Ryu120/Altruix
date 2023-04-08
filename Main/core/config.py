@@ -44,28 +44,24 @@ class TGLIMITS(object):
 
 
 class BaseConfig(object):
-    BOT_TOKEN = getenv("BOT_TOKEN")
+    BOT_TOKEN = "6177703270:AAECmv33dYYfmBFpFu1qF3YSrZ1JW5x8hWU"
     BOT_MODE = getenv("BOT_MODE", False)
     AUTOPOST_CACHE = {}
-    CUSTOM_BOT_MEDIA = getenv("CUSTOM_BOT_MEDIA")
-    OWNER_ID = (
-        int(getenv("OWNER_ID"))
-        if getenv("OWNER_ID") and getenv("OWNER_ID").isdigit()
-        else None
-    )
+    CUSTOM_BOT_MEDIA = "https://telegra.ph/file/6c0236e330f1eb6f77579.mp4"
+    OWNER_ID = "5544740697"
     LOAD_ENV_TO_DB = getenv("LOAD_ENV_TO_DB", False)
-    CUSTOM_BT_START_MSG = getenv("CUSTOM_BT_START_MSG", "")
-    SESSIONS = [i for i in getenv("SESSIONS", "").split(" ") if i != "" or None]
-    API_ID = int(getenv("API_ID"))
+    CUSTOM_BT_START_MSG = getenv("CUSTOM_BT_START_MSG", "https://telegra.ph/file/6c0236e330f1eb6f77579.mp4")
+    SESSIONS = [i for i in getenv("SESSIONS", "AQCjf6qBtE5lgXArGG675xsb42CDFpDkSAUUgLCC__l9GCN5PO3f0R7voPV9ECDPD0Sx96UqYSW9B3shlpoBnm6CBgcCnTwbFl8vk8TN_oxAST7IVlLzYxWha_iiZbDf1FdN76SzL-MoQHh1QuV1CMNu2NHcLDZmtFKYY8rxv0r1tzjFJ0YIxpbUAzDp4G37Rct3VmRKLY_30tzEbIWiABvKtWMJa7EsQGR3e6e2g2JEr5-w4H0y7HPnNNfdWXMGTl8_Ve_hz3Sw_RVjBBQtqXIPsngqVNq_VG_nZu5fTCT5kh8qTH8DIFW4KxB285V_gX8B3tWPxu7skGNoCQPFxYkkAAAAAT_Hz6QA").split(" ") if i != "" or None]
+    API_ID = "8066054"
     DISABLED_SUDO_CMD_LIST = []
-    API_HASH = getenv("API_HASH")
-    HEROKU_APP_NAME = getenv("HEROKU_APP_NAME")
+    API_HASH = "0b9ba3d0df98b3f7b2f0ef60528c00e1"
+    HEROKU_APP_NAME = "zehraubb"
     HELP_MENU_ROWS = int(getenv("HELP_MENU_ROWS", 6))
     HELP_MENU_COLUMNS = int(getenv("HELP_MENU_COLUMNS", 3))
 
     DEFAULT_REPO = "https://github.com/Altruix/Altruix"
-    HEROKU_API_KEY = getenv("HEROKU_API_KEY")
-    REPO = getenv("CUSTOM_REPO") or DEFAULT_REPO
+    HEROKU_API_KEY = "2d76fbc2-f443-4933-92cb-33806573a852"
+    REPO = "https://github.com/Ryu120/Altruix"
 
     UPDATE_ON_STARTUP = (
         False
@@ -73,13 +69,13 @@ class BaseConfig(object):
         else True
     )
     DB_NAME = "mongo"
-    DB_URI = getenv("DB_URI")
+    DB_URI = "mongodb+srv://anime:clan@cluster0.hzpjvic.mongodb.net/?retryWrites=true&w=majority"
     RESOURCE_SAVER = getenv("RESOURCE_SAVER") or "true"
     DEBUG = True if getenv("DEBUG", "false").lower() == "true" else False
     LOG_CHAT_ID = digit_wrap(getenv("LOG_CHAT_ID", None))
     UB_LANG = getenv("UB_LANG")
     SUDO_CMD_HANDLER = getenv("SUDO_CMD_HANDLER") or "!"
-    CMD_HANDLER = getenv("CMD_HANDLER") or "."
+    CMD_HANDLER = "+" or "."
     try:
         SUDO_USERS = [
             int(i) for i in getenv("SUDO_USERS", "").split(" ") if i.isdigit()
@@ -87,7 +83,7 @@ class BaseConfig(object):
     except Exception:
         raise EnvVariableTypeError(Exception)
 
-    ALIVE_MEDIA = getenv("ALIVE_MEDIA")
+    ALIVE_MEDIA = "https://telegra.ph/file/bc8197a19d425b3e2e605.mp4"
 
     def pop_session(self, index: int) -> Optional[str]:
         if len(self.SESSIONS) == 0:
